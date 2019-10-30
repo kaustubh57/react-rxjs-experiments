@@ -1,7 +1,13 @@
+import { createReducer } from './reducerUtils';
+
 const initialState = {
   data: 42
 };
 
-export default function testReducer(state = initialState, action) {
+function testReducer(state = initialState, action) {
   return state;
 }
+
+export default createReducer(initialState,
+  {}
+);
