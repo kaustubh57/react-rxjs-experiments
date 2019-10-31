@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { depositAmount, withdrawAmount } from '../actions/accountActions';
+import { depositStartAmount, withdrawStartAmount } from '../actions/accountActions';
 
 const actions = {
-  handleWithdrawAmount: withdrawAmount,
-  handleDepositAmount: depositAmount
+  handleWithdrawStartAmount: withdrawStartAmount,
+  handleDepositStartAmount: depositStartAmount
 };
 
 class AccountTransactions extends Component {
@@ -31,7 +31,7 @@ class AccountTransactions extends Component {
   };
 
   render() {
-    const {handleWithdrawAmount, handleDepositAmount} = this.props;
+    const {handleWithdrawStartAmount, handleDepositStartAmount} = this.props;
     const {amountEntered, selectedAccountType} = this.state;
 
     return (
@@ -51,9 +51,9 @@ class AccountTransactions extends Component {
         </div>
         <div>
           <input id="amount" type="text" value={amountEntered} onChange={this.handleAmountChange}/>
-          <button onClick={() => handleWithdrawAmount({account: selectedAccountType, amount: amountEntered})}>Withdraw
+          <button onClick={() => handleWithdrawStartAmount({account: selectedAccountType, amount: amountEntered})}>Withdraw
           </button>
-          <button onClick={() => handleDepositAmount({account: selectedAccountType, amount: amountEntered})}>Deposit
+          <button onClick={() => handleDepositStartAmount({account: selectedAccountType, amount: amountEntered})}>Deposit
           </button>
         </div>
       </div>

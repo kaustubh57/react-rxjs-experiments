@@ -1,15 +1,17 @@
-import { DEPOSIT, WITHDRAW } from './actionConstants';
+import { DEPOSIT_START, WITHDRAW_START } from './actionConstants';
 
-export const withdrawAmount = (payload) => dispatch => {
+export const withdrawStartAmount = (payload) => dispatch => {
+  console.log('### withdrawStartAmount action');
   dispatch({
-    type: WITHDRAW,
+    type: WITHDRAW_START,
     payload: payload
   })
 };
 
-export const depositAmount = (payload) => dispatch => {
+export const depositStartAmount = (payload) => dispatch => {
+  console.log('### depositStartAmount action');
   dispatch({
-    type: DEPOSIT,
+    type: DEPOSIT_START,
     payload: payload
   })
 };
