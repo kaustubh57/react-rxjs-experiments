@@ -10,7 +10,7 @@ export const accountWithdrawStartEpic = action$ =>
     ofType(WITHDRAW_START),
     watch("WITHDRAW_START", 30),
     // map(withdrawAmount)
-    delay(2000), // Asynchronously wait 1000ms then continue
+    delay(2000), // Asynchronously wait 2000ms then continue
     tap((action) => console.log('### EPIC ' + WITHDRAW_START + ' ### ' + JSON.stringify(action))),
     // mergeMap((action) => ),
     //mapTo(value => Object.assign({}, {type: DEPOSIT, payload: {amount: 1, account: 'checking'}})),
@@ -23,7 +23,7 @@ export const accountDepositStartEpic = action$ =>
   action$.pipe(
     ofType(DEPOSIT_START),
     watch("DEPOSIT_START", 30),
-    delay(2000), // Asynchronously wait 1000ms then continue
+    delay(2000), // Asynchronously wait 2000ms then continue
     tap((action) => console.log('### EPIC ' + DEPOSIT_START + ' ### ' + JSON.stringify(action))),
     //mapTo({type: DEPOSIT_END}),
     switchMap(action => of({type: DEPOSIT, payload: {...action.payload}})),
