@@ -4,6 +4,8 @@
     - Runs the app in the development mode.<br />
     - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+<br/><img src="/docs/images/project-ui.png" alt="React - Redux - RXJS banking applicaiton" height="160px"/>
+
 ## Project dependencies:
   - redux
   - react-redux
