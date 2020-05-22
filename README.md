@@ -10,10 +10,20 @@
   - rxjs
   - redux-observable
   - lodash
+  - eventemitter3
   - [reducerUtils](https://github.com/kaustubh57/react-rxjs-experiments/blob/master/src/reducers/reducerUtils.js): `reduceReducers` is a utility. It lets us supply multiple reducer functions as arguments and effectively forms a pipeline out of those functions, then returns a new reducer function. If we call that new reducer with the top-level state, it will call the first input reducer with the state, pass the output of that to the second input reducer, and so on. (more about this: https://medium.com/@avremelk/practical-redux-course-1aeb74bd01aa)
 
 ## Project file size after `npm run build`:
-  - Oct-29, 2019:
+- May-22, 2020:
+
+| Size | File |
+|---|---|
+| 194 KB | build/static/js/2.a042c26c.chunk.js |
+| 6.3 KB | build/static/js/main.e8635657.chunk.js |
+| 1.6 KB | build/static/js/runtime-main.5679a37a.js |
+| 586 KB | build/static/css/main.b100e6da.chunk.css |
+
+- Oct-29, 2019:
 
 | Size | File |
 |---|---|

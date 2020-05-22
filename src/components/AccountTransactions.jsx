@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { depositStartAmount, withdrawStartAmount } from '../actions/accountActions';
+import emitterService from '../services/EmitterService';
+import { ACCOUNT_ACTION } from '../constants/EmitterActionConstants';
 
 const actions = {
-  handleWithdrawStartAmount: withdrawStartAmount,
-  handleDepositStartAmount: depositStartAmount
+  withdrawStartAmount: withdrawStartAmount,
+  depositStartAmount: depositStartAmount
 };
 
 class AccountTransactions extends Component {
@@ -30,8 +32,18 @@ class AccountTransactions extends Component {
     });
   };
 
+  handleWithdrawStartAmount = payload => {
+    emitterService.emit(ACCOUNT_ACTION, payload);
+    this.props.withdrawStartAmount({account: payload.account, amount: payload.amount});
+  };
+
+  handleDepositStartAmount = payload => {
+    emitterService.emit(ACCOUNT_ACTION, payload);
+    this.props.depositStartAmount({account: payload.account, amount: payload.amount});
+  };
+
+
   render() {
-    const {handleWithdrawStartAmount, handleDepositStartAmount} = this.props;
     const {amountEntered, selectedAccountType} = this.state;
 
     return (
@@ -51,9 +63,19 @@ class AccountTransactions extends Component {
         </div>
         <div>
           <input id="amount" type="text" value={amountEntered} onChange={this.handleAmountChange}/>
-          <button onClick={() => handleWithdrawStartAmount({account: selectedAccountType, amount: amountEntered})}>Withdraw
+          <button onClick={() => this.handleWithdrawStartAmount({
+            account: selectedAccountType,
+            amount: amountEntered,
+            field: 'amount',
+            action: 'withdraw'
+          })}>Withdraw
           </button>
-          <button onClick={() => handleDepositStartAmount({account: selectedAccountType, amount: amountEntered})}>Deposit
+          <button onClick={() => this.handleDepositStartAmount({
+            account: selectedAccountType,
+            amount: amountEntered,
+            field: 'amount',
+            action: 'deposit'
+          })}>Deposit
           </button>
         </div>
       </div>
