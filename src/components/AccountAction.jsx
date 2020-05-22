@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { of, pipe } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
 import emitterService from '../services/EmitterService';
 import { ACCOUNT_ACTION } from '../constants/EmitterActionConstants';

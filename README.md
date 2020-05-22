@@ -18,10 +18,10 @@
 
 | Size | File |
 |---|---|
-| 194 KB | build/static/js/2.a042c26c.chunk.js |
+| 192 KB | build/static/js/2.a042c26c.chunk.js |
 | 6.3 KB | build/static/js/main.e8635657.chunk.js |
 | 1.6 KB | build/static/js/runtime-main.5679a37a.js |
-| 586 KB | build/static/css/main.b100e6da.chunk.css |
+| 604 KB | build/static/css/main.b100e6da.chunk.css |
 
 - Oct-29, 2019:
 
